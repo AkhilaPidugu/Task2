@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0f2">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_cards5">
+
+            <ImageButton
+                android:id="@+id/card_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/linearLayout"
+                android:scaleType="centerCrop"
+                android:src="@drawable/event_img" />
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="2dp">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/card_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:maxLines="1"
+                        android:text="2"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp" />
+                    <!--                    android:fontFamily="@font/montserrat_bold"-->
+
+                    <TextView
+                        android:id="@+id/card_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Jan"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        android:layout_gravity="start" />
+                    <!--                    android:fontFamily="@font/montserrat_regular"-->
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/card_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="12dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Entertainment"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="12dp" />
+                <!--                android:fontFamily="@font/montserrat_regular"-->
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

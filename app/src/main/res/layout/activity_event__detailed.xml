@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:overScrollMode="never"
+    tools:context=".Event_Detailed">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/mainImageView"
+            android:src="@drawable/delhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_min="150dp"/>
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:scaleX="-1"
+            android:src="@drawable/arrow_icon"
+            android:onClick="back"
+            android:tint="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="15dp" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainImageView">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/society_photo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="#DD3B2F"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="12dp"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/eventName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IIT Rendevous 2020"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="26sp"
+                        tools:layout_editor_absoluteX="78dp"
+                        tools:layout_editor_absoluteY="737dp" />
+
+                    <ImageButton
+                        android:id="@+id/share"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:onClick="share"
+                        android:src="@drawable/share"
+                        android:tint="#030A32"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/society_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IIT Delhi"
+                    android:textColor="#807F81"
+                    android:textSize="16sp" />
+                <!--            android:fontFamily="@font/montserrat_regular"-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/descriptionHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+
+            android:text="@string/description"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+        <TextView
+            android:id="@+id/descriptionBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:autoLink="all"
+
+            android:linksClickable="true"
+            android:text="Welcome to IIT Delhi"
+            android:textColor="#000"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionHeading" />
+        <!--        android:fontFamily="@font/montserrat_light"-->
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="#80707070"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/descriptionBody" />
+
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2">
+
+            <ImageView
+                android:id="@+id/calendarImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/calendar"
+                android:tint="#000"
+                android:layout_marginRight="12dp" />
+
+            <!--            android:fontFamily="@font/montserrat_semi_bold"-->
+            <TextView
+                android:id="@+id/dateAndTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundrect4"
+                android:backgroundTint="#CDE6B1"
+                android:padding="8dp"
+                android:onClick="click"
+                android:paddingStart="12dp"
+                android:layout_marginLeft="15dp"
+                android:paddingEnd="12dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin2">
+
+            <ImageView
+                android:id="@+id/locationImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/location"
+                android:tint="#000"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundrect4"
+                android:backgroundTint="#EADFBE"
+                android:onClick="locate"
+                android:padding="8dp"
+                android:layout_marginLeft="15dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="DTU,Samaypur Badli"
+                android:textColor="#000"
+                android:textSize="18sp" />
+            <!--            android:fontFamily="@font/montserrat_semi_bold"-->
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/lin4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin3">
+
+            <ImageView
+                android:id="@+id/categoryImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/category"
+                android:tint="#000"
+                android:layout_marginRight="12dp" />
+
+            <EditText
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundrect4"
+                android:backgroundTint="#F6CBCB"
+                android:layout_marginLeft="15dp"
+                android:padding="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:hint=" Your Technology"
+                android:textColor="#000"
+                android:textSize="18sp" />
+            <!--            android:fontFamily="@font/montserrat_semi_bold"-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin4">
+
+            <ImageView
+                android:id="@+id/moneyImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/money"
+                android:tint="#000"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:id="@+id/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundrect4"
+                android:backgroundTint="#D7E6ED"
+                android:layout_marginLeft="15dp"
+                android:padding="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="Rs.500"
+                android:textColor="#000"
+                android:textSize="18sp" />
+            <!--            android:fontFamily="@font/montserrat_semi_bold"-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin5">
+
+            <ImageView
+                android:id="@+id/openForAllImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person"
+                android:tint="#000"
+                android:layout_marginRight="12dp" />
+
+            <TextView
+                android:id="@+id/openForAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundrect4"
+                android:backgroundTint="#FAF1EE"
+                android:layout_marginLeft="15dp"
+                android:padding="8dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="Open to all"
+                android:textColor="#000"
+                android:textSize="18sp" />
+            <!--            android:fontFamily="@font/montserrat_semi_bold"-->
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="#80707070"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lin6" />
+
+        <TextView
+            android:id="@+id/specialNoteHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+
+            android:text="@string/special_note"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view3" />
+        <!--        android:fontFamily="@font/montserrat_semi_bold"-->
+        <TextView
+            android:id="@+id/specialNoteBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:autoLink="web|email"
+
+            android:linksClickable="true"
+            android:text="Everyone must bring their ID Proof "
+            android:textColor="#000"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialNoteHeading" />
+        <!--        android:fontFamily="@font/montserrat_light"-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialNoteBody">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:onClick="insert"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
+                android:text="INSERT">
+
+            </Button>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

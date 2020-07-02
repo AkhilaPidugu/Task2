@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Task2</string>
+    <string name="description">Description</string>
+    <string name="special_note">Special Note</string>
+</resources>
