@@ -3,6 +3,9 @@ package com.example.task2;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
+
 import android.content.ContentUris;
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +14,7 @@ import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,13 +25,26 @@ public class Event_Detailed extends AppCompatActivity {
     TextView t1;
     EditText e1;
     long startMillis;
+    ImageView i;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event__detailed);
+        setContentView(R.layout.event_detailed);
         t1 = findViewById(R.id.dateAndTime);
+        i=findViewById(R.id.mainImageView);
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Event_Detailed.this, MainActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(Event_Detailed.this,
+                                i,
+                                ViewCompat.getTransitionName(i));
+                startActivity(intent, options.toBundle());
+            }
+        });
 
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
@@ -70,8 +87,4 @@ public class Event_Detailed extends AppCompatActivity {
     }
 
 
-    public void back(View view) {
-        Intent i=new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(i);
-    }
 }

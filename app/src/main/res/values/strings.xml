@@ -2,4 +2,5 @@
     <string name="app_name">Task2</string>
     <string name="description">Description</string>
     <string name="special_note">Special Note</string>
+    <string name="transition_name">activity_img_trans</string>
 </resources>
